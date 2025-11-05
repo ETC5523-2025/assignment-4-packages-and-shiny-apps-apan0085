@@ -26,7 +26,7 @@ pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-apan0085")
 
 ## Documentation
 
-For detailed documentation and explames, visit the pkgdown site:
+For detailed documentation and examples, visit the pkgdown site [here](https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-apan0085/).
 
 
 ## Data Description
