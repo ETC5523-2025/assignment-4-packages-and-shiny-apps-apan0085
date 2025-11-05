@@ -12,9 +12,12 @@ library(viridisLite)
 # Load your dataset from your package
 data("last_names", package = "SurNamExp")
 
-# ---------- UI ----------
+# UI
 ui <- dashboardPage(
-  dashboardHeader(title = "Most Common U.S. Surnames"),
+  dashboardHeader(
+    title = span("Most Common U.S. Surnames", style = "font-size:22px; font-weight:600;"),
+    titleWidth = 420
+  ),
   dashboardSidebar(
     sidebarMenu(
       menuItem("Controls", tabName = "controls", icon = icon("sliders")),
@@ -73,11 +76,29 @@ ui <- dashboardPage(
         .box  { border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.18); }
         div.dataTables_wrapper { width: 100%; overflow-x: auto; }
 
-        /* ===== Sidebar colours — change these three to suit ===== */
+        /* ===== Sidebar colours ===== */
         .main-sidebar, .left-side { background-color: #ffffff !important; }  /* sidebar bg */
-        .sidebar-menu > li > a, .sidebar .sidebar-menu a { color: #333333 !important; } /* text */
-        .sidebar-menu > li.active > a, .sidebar-menu > li > a:hover {
-          background-color: #e9f2ff !important; color: #000000 !important; } /* active/hover */
+
+        /* Menu link text */
+        .sidebar-menu > li > a, .sidebar .sidebar-menu a { color: #333333 !important; }
+
+        /* General sidebar text (labels, inputs, help text, radio/checkbox labels) */
+        .main-sidebar, .main-sidebar * { color: #333333; }
+        .sidebar .control-label,
+        .sidebar .shiny-input-container .shiny-input-label,
+        .sidebar .selectize-input,
+        .sidebar .form-control,
+        .sidebar .help-block,
+        .sidebar .radio label,
+        .sidebar .checkbox label { color: #333333 !important; }
+
+        /* Active/hovered menu item */
+        .sidebar-menu > li.active > a,
+        .sidebar-menu > li > a:hover {
+          background-color: #e9f2ff !important;
+          color: #000000 !important;
+        }
+
         .main-sidebar { box-shadow: none !important; border-right: 1px solid #e5e5e5 !important; }
         .sidebar .header { color: #666666 !important; }
       "))
@@ -123,7 +144,7 @@ ui <- dashboardPage(
   )
 )
 
-# ---------- Server ----------
+# Server
 server <- function(input, output, session) {
   # Zoom management
   font_px <- reactiveVal(14L)
@@ -131,7 +152,7 @@ server <- function(input, output, session) {
   observeEvent(input$zoom_out, { font_px(max(font_px() - 1L, 10L)) })
   observe({ session$sendCustomMessage("setFontSize", font_px()) })
 
-  # ----- COLOR HANDLERS -----
+  # COLOR HANDLERS
   single_color <- reactive({
     if (input$singleColor == "Auto (neutral)" || is.null(input$singleColor)) {
       "#333333"  # neutral dark gray
@@ -192,7 +213,7 @@ server <- function(input, output, session) {
     )
   })
 
-  # ---- PLOTS: ggplot2 ----
+  # ggplot2
   output$surnamePlot <- renderPlot({
     df <- filtered_sorted()
     base_sz <- font_px()
@@ -229,7 +250,7 @@ server <- function(input, output, session) {
       } else NULL
   })
 
-  # ---- PLOTS: plotly ----
+  # plotly
   output$surnamePlotly <- renderPlotly({
     df <- filtered_sorted()
     base_sz <- font_px()
