@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+.SurNamExp.Rcheck
+.DS_Store

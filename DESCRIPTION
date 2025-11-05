@@ -1,17 +1,24 @@
 Package: SurNamExp
-Title: What the Package Does (One Line, Title Case)
+Type: Package
+Title: Common Last Names in the USA
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Ayush", "Pandia", , "apan0085@student.monash.com", role = c("aut", "cre"))
+Description: The SurNamExp package includes a Shiny app and dataset that visualise and summarise firm performance across industries and years. 
+              It demonstrates how to structure an R package, document functions with roxygen2,and present interactive analysis in Shiny using a reproducible, packaged dataset.
 License: MIT + file LICENSE
 Encoding: UTF-8
+Imports: shiny,
+    ggplot2,
+    dplyr,
+    shinydashboard,
+    plotly,
+    DT,
+    viridisLite
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Depends: 
     R (>= 3.5)
 LazyData: true
-Suggests: 
-    knitr,
-    rmarkdown
+Suggests: knitr,rmarkdown
 VignetteBuilder: knitr

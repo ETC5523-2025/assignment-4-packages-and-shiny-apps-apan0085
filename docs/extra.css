@@ -1,0 +1,35 @@
+/* Typography */
+body { font-size: 16px; line-height: 1.6; }
+h1, .h1 { font-weight: 700; letter-spacing: 0.2px; }
+h2, .h2 { font-weight: 700; margin-top: 2rem; }
+
+/* Link + accent colour */
+a { color: #2C7BE5; }                 /* primary link color */
+a:hover, a:focus { color: #1a5fcc; }
+
+/* Navbar */
+.navbar { box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+.navbar .navbar-brand { font-weight: 800; letter-spacing: .3px; }
+
+/* Sidebar (TOC) */
+.toc {
+  border-left: 3px solid #eef2f7;
+  padding-left: 1rem;
+}
+.toc .nav-link { color: #6c757d; }
+.toc .nav-link.active { color: #2C7BE5; font-weight: 600; }
+
+/* Code blocks */
+pre, code {
+  background: #f8fafc !important;
+  border: 1px solid #edf2f7;
+  border-radius: 6px;
+}
+pre { padding: 12px 14px; }
+
+/* Tables */
+.table { font-size: 0.95rem; }
+.table thead th { border-bottom: 2px solid #e9ecef; }
+
+/* Footer */
+.footer { border-top: 1px solid #eef2f7; padding-top: 1rem; }
