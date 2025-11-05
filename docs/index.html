@@ -86,8 +86,10 @@
 <li>Per_1000_Americans — numeric; estimated count per 1,000 people.</li>
 </ol>
 <blockquote>
-<p>See ?SurNamExp::last_names for details.</p>
+<p>Use the below for more details :</p>
 </blockquote>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">?</span><span class="fu">SurNamExp</span><span class="fu">::</span><span class="va"><a href="reference/last_names.html">last_names</a></span> </span></code></pre></div>
 <div class="section level3">
 <h3 id="what-you-can-do-">What you can do ?<a class="anchor" aria-label="anchor" href="#what-you-can-do-"></a>
 </h3>
@@ -102,15 +104,15 @@
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>Launch the dashboard:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">SurNamExp</span><span class="fu">::</span><span class="fu">launch_app</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Inspect the packaged data:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">SurNamExp</span><span class="fu">::</span><span class="va"><a href="reference/last_names.html">last_names</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">SurNamExp</span><span class="fu">::</span><span class="va"><a href="reference/last_names.html">last_names</a></span><span class="op">)</span></span></code></pre></div>
 <p>Reproducibility:</p>
 <p>Regenerate the packaged dataset and reinstall:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># from the project root</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/source.html" class="external-link">source</a></span><span class="op">(</span><span class="st">"data-raw/make_last_names.R"</span><span class="op">)</span></span>
 <span></span>

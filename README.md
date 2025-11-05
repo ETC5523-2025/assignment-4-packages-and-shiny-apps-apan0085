@@ -38,7 +38,10 @@ Columns:
 1. Surname — character; the family name (e.g., “Smith”, “Johnson”).
 2. Per_1000_Americans — numeric; estimated count per 1,000 people.
 
-> See ?SurNamExp::last_names for details.
+> Use the below for more details :
+```r
+?SurNamExp::last_names 
+```
 
 ### What you can do ?
 
